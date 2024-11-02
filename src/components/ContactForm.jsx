@@ -1,4 +1,15 @@
+import { useState } from "react";
+
 function ContactForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert(`${name}, ${email}, ${message}`);
+  }
+
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto max-w-md">
@@ -6,7 +17,7 @@ function ContactForm() {
           Entre em contato
         </h2>
         <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-violet-400">
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="nome"
@@ -17,6 +28,8 @@ function ContactForm() {
               <input
                 type="text"
                 id="nome"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Seu nome"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-violet-400 focus:border-violet-400"
               />
@@ -31,6 +44,8 @@ function ContactForm() {
               <input
                 type="email"
                 id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Seu e-mail"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-violet-400 focus:border-violet-400"
               />
@@ -45,6 +60,8 @@ function ContactForm() {
               <textarea
                 id="mensagem"
                 placeholder="Sua mensagem"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="w-full px-3 py-2 border rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-violet-400 focus:border-violet-400"
               />
             </div>
