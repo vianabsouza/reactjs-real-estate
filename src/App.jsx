@@ -1,6 +1,7 @@
 import Navbar from "./components/navbar";
 import Hero from "./components/Hero";
 import FeatureProperties from "./components/FeaturedProperties";
+import ContatForm from "./components/ContactForm";
 
 const properties = [
   {
@@ -38,6 +39,7 @@ function App() {
       <Navbar />
       <Hero />
       <FeatureProperties properties={properties} />
+      <ContatForm />
     </div>
   );
 }
