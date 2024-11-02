@@ -2,7 +2,7 @@ import PropertyCard from "./PropertyCard";
 
 function FeaturedProperties({ properties }) {
   return (
-    <section className="py-15 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-700">
           Imóveis em destaque
